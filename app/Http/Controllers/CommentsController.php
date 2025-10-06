@@ -39,4 +39,17 @@ class CommentsController extends Controller
 
     }
 
+    public function destroy(Comment $comment) {
+        
+        //erro 403 se o comentário não for do usuário
+        if ($comment->user_id !== auth()->id()) {
+            abort(403, 'Ação não autorizada');
+        }
+
+        $comment->delete();
+
+        return redirect()->back()->with('success', 'Comentário removido!');
+
+    }
+
 }

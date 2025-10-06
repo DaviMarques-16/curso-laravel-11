@@ -11,7 +11,6 @@ class Post extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
-        'title',
         'content',
         'user_id',
     ];
@@ -23,7 +22,7 @@ class Post extends Model
 
     // relationship: vários comentários em um post
     public function comments() {
-        return $this->hasMany()
+        return $this->hasMany(Comment::class);
     }
 
     
