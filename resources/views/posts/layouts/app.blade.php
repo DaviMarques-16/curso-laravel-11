@@ -9,13 +9,15 @@
 <body class="flex flex-col min-h-screen">
     <header class="flex flex-row w-full h-32 bg-slate-600 justify-center items-center">
         <div>
-            <h1 class="text-3xl text-cyan-300">Posts on: Poste e Participe</h1>
+
+        <a href="{{route ('posts.index')}}">    <h1 class="text-3xl text-cyan-300">Posts on: Poste e Participe</h1>  </a>
+          
         </div>
     </header>
 
     @yield('content')
 
-    <footer class="mb-3 ml-5">
+    <footer class="mb-3 ml-5 mt-2">
         <p class="text-sm">@2025 copyright: <span>Posts on: Poste e Participe</span></p>
     </footer>
 </body>
